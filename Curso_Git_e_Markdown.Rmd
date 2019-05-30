@@ -1,0 +1,117 @@
+
+---
+title: Curso
+author: 
+- Gabriela Souza Cristino^1^
+- UFG^1^
+output: 
+  word_document:
+    reference_docx: Scripts/Template.docx
+bibliography: Biblioteca/My-Collection.bib
+csl: Biblioteca/ecology-letters.csl
+---
+
+# Instalando pacote
+
+```{r pacotes}
+if (!require("vegan")) install.packages("vegan")
+if (!require("knitr")) install.packages("knitr")
+```
+
+
+# Organizando um texto
+
+~~Eu~~ sou uma *trouxa* muito **grande**
+
+# Materiais e Métodos
+
+
+
+```{r}
+data("mtcars")
+
+lm(mpg ~carb, mtcars)
+summary(lm(mpg ~carb, mtcars))
+```
+
+
+# Resultados
+
+A função kable  retorna uma tabela organizada
+
+Se quiser colocar o título na tabela é só escrever o texto, pedir para esconder o código com o *echo=FALSE, eval=T*
+
+```{r}
+data("mtcars")
+kable(mtcars)
+```
+
+
+A cerquinha abaixo não mostra nem código nem o plot
+
+```{r, echo=FALSE, eval=FALSE}
+plot(1)
+```
+
+A cerquinha abaixo mostra o plote, mas não mostra o código
+
+```{r echo=FALSE, eval=T}
+plot(1)
+```
+
+A cerquinha a baixo mostra o código e o plot
+
+```{r echo=TRUE, eval=TRUE}
+plot(1)
+
+```
+
+
+# Discussão
+
+```{r echo=FALSE, eval=TRUE, fig.cap= "Figura 1"}
+
+plot(1)
+
+```
+
+
+# Inserir figura
+
+Para chamar uma que está fora do R figura usa-se o seguinte código:
+
+![](Figura/Rplot.png)
+
+# Organizando uma tabela
+
+
+A função kable  retorna uma tabela organizada
+
+Se quiser colocar o título na tabela é só escrever o texto, pedir para esconder o código com o *echo=FALSE, eval=T*
+
+Tabela 1. Modelos de carros antigos e suas características
+
+```{r}
+data("mtcars")
+kable(mtcars)
+```
+
+Numéro de linhas e colunas
+
+```{r}
+nrow(mtcars)
+ncol(mtcars)
+```
+
+
+# Como colocar citações e organizar referências
+
+Estou citando fulano [@Heberlein2016].
+
+Segundo @Faculty2015, isso pode acontecer
+
+Estou citando varias pessoas que fizeram isso [@Fallows2016; @Allen2016; @Ahmed2009; @Akino1999]
+
+
+# Referências
+
